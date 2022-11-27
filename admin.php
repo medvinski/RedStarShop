@@ -8,7 +8,7 @@ function function_alert($message) {
   
   
 // Function call
-function_alert("Welcome to Geeks for Geeks");
+function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit your food purchases!");
 
 @include "config.php";
 
@@ -20,7 +20,7 @@ if(isset($_POST["add_product"]))
     $p_price = $_POST["p_price"];
     $p_image = $_FILES["p_image"]["name"];
     $p_image_tmp_name = $_FILES["p_image"]["tmp_name"];
-    $p_image_folder = "images/".$p_image;
+    $p_image_folder = "product_images/".$p_image;
 
     if(empty($p_name) || empty($p_price) || empty($p_image)){
         $message[] = "Please add all information to add a product";
@@ -63,7 +63,7 @@ if(isset($message)){
 }
 
 include("header.html");
-include("footer.html");
+
 
 alert("Kim Jong Un asks North Koreans to eat less until 2025 when it reopens its border with China - Please limit your rice purchases (Kim Jong Un's Speech, 2021)");
 function alert($msg) {
@@ -82,9 +82,45 @@ enctype="multipart/form-data">
     <input type="submit" value="Add product" name="add_product" class="btn">
 </form>
 </div>
-</div>
- 
 
+<?php
+$select = mysqli_query($conn, "SELECT * FROM products");
+?>
+
+<div class="product-display">
+    <table class ="product-display-table">
+     <thead>
+        
+        <tr>
+            <td>Image</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Action</td>
+
+
+        </tr>
+      </thead>
+      <?php
+
+      while($row =mysqli_fetch_assoc($select)){
+
+      ?>
+    <tr>
+       <td><img src="product_images/<?php echo $row['image']; ?>" height="100" alt=""></td>
+       <td><?php echo $row['name'];?></td>
+       <td><?php echo $row['price'];?></td>
+       <td>
+        
+        
+       </td>
+
+
+    </tr>
+
+    <?php };?>
+
+
+   
 <script src="js/script.js"></script>
 <script>
     // When the user clicks on div, open the popup
