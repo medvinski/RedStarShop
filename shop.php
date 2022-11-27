@@ -12,7 +12,7 @@ function function_alert($message) {
 function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit your food purchases!");
 
 include("header.html");
-include("footer.html");
+
         
 ?> 
 

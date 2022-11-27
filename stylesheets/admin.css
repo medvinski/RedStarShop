@@ -138,7 +138,7 @@ body {
 
   .product-display{
     margin:2rem 0;
-    font-size: 500rem;
+    font-size: 20rem;
   }
 
   .product-display .product-display-table{
@@ -152,7 +152,7 @@ body {
   .product-display .product-display-table thead{
 
     padding: 1rem;
-    font-size: 500rem;
+    font-size: 5rem;
     color: black;
     background-color: aliceblue;
 
@@ -160,7 +160,7 @@ body {
 
   .button {
     background-color:dodgerblue;
-    color: dodgerblue;
+    color: rgb(4, 7, 10);
     border:none;
     text-align: center;
     font-family: 'Grover Heavy', sans-serif;

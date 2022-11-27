@@ -37,7 +37,14 @@ if(isset($_POST["add_product"]))
         }
     }
     
-}
+};
+
+if(isset($_GET['delete'])){
+   $id = $_GET['delete'];
+   mysqli_query($conn, "DELETE FROM products WHERE id=$id");
+   header('location:admin.php');
+
+};
 
 ?>
 
@@ -110,6 +117,8 @@ $select = mysqli_query($conn, "SELECT * FROM products");
        <td><?php echo $row['name'];?></td>
        <td><?php echo $row['price'];?></td>
        <td>
+        <a href="admin_edit.php?edit=<?php echo $row['id'];?>" class="btn">Edit</a>
+        <a href="admin.php?delete=<?php echo $row['id'];?>" class="btn">Delete</a>
         
         
        </td>

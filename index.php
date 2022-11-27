@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="stylesheets/disclaimer.css">
     
                             
-    <title>Document</title>
+    <title>Disclaimer</title>
 </head>
 
 
 <body>
 <h1>This website is  an educational resource about North Korea using e-commerce project template.</h1>
+<h2>Alert messages always showing while accessing are intentional <br>These are meant to mimic constant<br> propaganda and indoctrination in North Korea</h2>
 <div class="popup" onclick="myFunction()"><i class="bi bi-exclamation-square" style="font-size: 5em;"></i> 
   <span class="popuptext" id="myPopup">Clicking on this icon will show additional socio-economic context on the website</span>
 </div>
@@ -24,7 +25,7 @@
   </div>
 </div>
 <?php 
-include "footer.html";
+
 ?>
 
 <script>
