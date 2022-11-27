@@ -9,9 +9,10 @@ function function_alert($message) {
   
   
 // Function call
-function_alert("Welcome to Geeks for Geeks");
+function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit your food purchases!");
+
 include("header.html");
-include("footer.php");
+include("footer.html");
         
 ?> 
 
@@ -23,7 +24,7 @@ include("footer.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/shop.css">
     
-    <title>Document</title>
+    <title>Homepage</title>
 </head>
 <body>
 

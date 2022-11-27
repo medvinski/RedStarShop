@@ -15,15 +15,18 @@
     margin: 0px auto;
     text-align: center;
     font: 25px Georgia, "Times New Roman", Times, serif;
-    font-size: 14px;
+    font-size: 60px;
     width: 25px;
+    color: black;
+    
 }
 .foot {
  display:inline;
     line-height: 70px;
+    
 }
 .content img {
- height: 60px;
-    width: 80px;
+ height: 90px;
+    width: 90px;
     float:right;
 }

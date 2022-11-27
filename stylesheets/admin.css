@@ -136,6 +136,28 @@ body {
 
   }
 
+  .product-display{
+    margin:2rem 0;
+    font-size: 500rem;
+  }
+
+  .product-display .product-display-table{
+    width: 80rem;
+    font-size: 5rem;
+    
+    
+
+  }
+
+  .product-display .product-display-table thead{
+
+    padding: 1rem;
+    font-size: 500rem;
+    color: black;
+    background-color: aliceblue;
+
+  }
+
   .button {
     background-color:dodgerblue;
     color: dodgerblue;
