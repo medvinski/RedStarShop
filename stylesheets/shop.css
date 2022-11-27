@@ -8,7 +8,7 @@
 
 body { 
     
-    background: url(images/disclaimer.png) no-repeat center center fixed; 
+    background: url(../images/disclaimer.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -79,38 +79,26 @@ body {
   }
 
   section{
-    padding:5rem;
-  }
-
-  .message{
-    display: block;
-    background-color: var(--bg-color);
-    padding:1.5 rem 1 rem;
-    color: black;
-    margin-bottom: 2rem;
-    text-align: center;
-
+    padding:2rem;
   }
 
   .add-product-form{
 
-    max-width: 500rem;
-    background-color:rgb(109, 106, 106);
-    border-radius:5rem;
-    padding: 2rem;
+    max-width: 50rem;
+    background-color:grey;
+    border-radius:  .5rem;
+    padding: 1rem;
     margin:0 auto;
     margin-top: 2rem;
-    font-family: 'Grover Heavy', sans-serif;  
     
   }
 
   .add-product-form .box{
 
     color:black;
-    padding: 1.2rem 2rem;
-    font-size: 30rem;
+    padding:1.2rem 2rem;
+    font-size: 2rem;
     width: 700px;
-    font-family: 'Grover Heavy', sans-serif;  
 
   }
   .btn,
@@ -120,17 +108,17 @@ body {
     display:block;
     width: 100%;
     text-align: center;
-    background-color:red;
+    background-color: brown;
     font-size: 1.7rem;
-    padding: 1rem 3rem;
-    font-family: 'Grover Heavy', sans-serif;  
+    padding: 1.2rem 3rem;
+    
 
 
   }
 
   .button {
-    background-color:dodgerblue;
-    color: dodgerblue;
+    background-color:blue;
+    color: red;
     border:none;
     text-align: center;
     font-family: 'Grover Heavy', sans-serif;
@@ -173,7 +161,7 @@ body {
   .popup .popuptext {
     visibility: hidden;
     width: 400px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
     background-color: aliceblue;
     color: black;

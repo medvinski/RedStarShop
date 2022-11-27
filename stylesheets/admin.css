@@ -8,7 +8,7 @@
 
 body { 
     
-    background: url(images/disclaimer.png) no-repeat center center fixed; 
+    background: url(../images/disclaimer.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -79,46 +79,66 @@ body {
   }
 
   section{
-    padding:2rem;
+    padding:5rem;
   }
 
-  .add-product-form{
+  .message{
+    display: block;
+    background-color: var(--bg-color);
+    padding:1.5 rem 1 rem;
+    color: black;
+    margin-bottom: 2rem;
+    text-align: center;
 
-    max-width: 50rem;
-    background-color:grey;
-    border-radius:  .5rem;
-    padding: 1rem;
-    margin:0 auto;
-    margin-top: 2rem;
+  }
+
+  .alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  .admin-product-form-container{
+
+    max-width: 500rem;
+    background-color:rgb(109, 106, 106);
+    
+    padding: 2rem 2rem;
+    margin:10rem;
+    margin-top: 10rem;
+    font-family: 'Grover Heavy', sans-serif;  
     
   }
 
-  .add-product-form .box{
+  .admin-product-form-container .box{
 
     color:black;
-    padding:1.2rem 2rem;
+    padding: 1.2rem 2rem;
     font-size: 2rem;
-    width: 700px;
+    width: auto;
+    font-family: 'Grover Heavy', sans-serif;  
 
   }
   .btn,
   .option.btn,
-  .delet.btn{
+  .delete.btn{
 
-    display:block;
-    width: 100%;
+    display:center;
+    width: 90%;
     text-align: center;
-    background-color: brown;
-    font-size: 1.7rem;
-    padding: 1.2rem 3rem;
+    background-color:red;
+    font-size: 2rem;
+    padding: .9rem rem;
+    font-family: 'Grover Heavy', sans-serif;
     
 
 
   }
 
   .button {
-    background-color:blue;
-    color: red;
+    background-color:dodgerblue;
+    color: dodgerblue;
     border:none;
     text-align: center;
     font-family: 'Grover Heavy', sans-serif;
@@ -161,7 +181,7 @@ body {
   .popup .popuptext {
     visibility: hidden;
     width: 400px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
     background-color: aliceblue;
     color: black;

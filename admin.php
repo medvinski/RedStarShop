@@ -1,4 +1,15 @@
 <?php
+
+function function_alert($message) {
+      
+    // Display the alert box 
+    echo "<script>alert('$message');</script>";
+}
+  
+  
+// Function call
+function_alert("Welcome to Geeks for Geeks");
+
 @include "config.php";
 
 if(isset($_POST["add_product"]))
@@ -38,7 +49,7 @@ if(isset($_POST["add_product"]))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="stylesheets/admin.css">
     <title>Admin Panel</title>
 </head>
 <body>
@@ -51,13 +62,17 @@ if(isset($message)){
 
 }
 
+include("header.html");
+include("footer.html");
+
+alert("Kim Jong Un asks North Koreans to eat less until 2025 when it reopens its border with China - Please limit your rice purchases (Kim Jong Un's Speech, 2021)");
+function alert($msg) {
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
+
 ?>
-
 <div class="container">
-
-
-<section>
-
+<div class="admin-product-form-container">
 <form action="<?php $_SERVER["PHP_SELF"]?> "method="post"
 enctype="multipart/form-data">
 <h2>Add new product</h2>
@@ -66,7 +81,7 @@ enctype="multipart/form-data">
     <input type="file" name="p_image" accept="image/png, image/jpg, image/jped" class="box" required>
     <input type="submit" value="Add product" name="add_product" class="btn">
 </form>
-</section>
+</div>
 </div>
  
 

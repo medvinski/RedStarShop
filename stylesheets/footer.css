@@ -1,0 +1,29 @@
+.siteFooterBar {
+    position: fixed;
+    bottom: 0;
+    padding-top: 10px;
+    width: 30%;
+    box-shadow: 0px 0px 25px rgb(207, 207, 207);
+    height: 70px;
+    color: #9B9B9B;
+    
+}
+
+.content {
+    display: block;
+    padding: 1px;
+    margin: 0px auto;
+    text-align: center;
+    font: 25px Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    width: 25px;
+}
+.foot {
+ display:inline;
+    line-height: 70px;
+}
+.content img {
+ height: 60px;
+    width: 80px;
+    float:right;
+}
