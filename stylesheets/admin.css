@@ -127,7 +127,7 @@ body {
     display:center;
     width: 90%;
     text-align: center;
-    background-color:red;
+    background-color:rgb(89, 0, 255);
     font-size: 2rem;
     padding: .9rem rem;
     font-family: 'Grover Heavy', sans-serif;
@@ -138,12 +138,12 @@ body {
 
   .product-display{
     margin:2rem 0;
-    font-size: 20rem;
+    font-size: 5rem;
   }
 
   .product-display .product-display-table{
     width: 80rem;
-    font-size: 5rem;
+    font-size: 3rem;
     
     
 
@@ -152,9 +152,9 @@ body {
   .product-display .product-display-table thead{
 
     padding: 1rem;
-    font-size: 5rem;
+    font-size: 3rem;
     color: black;
-    background-color: aliceblue;
+    background-color: rgb(45, 90, 129);
 
   }
 

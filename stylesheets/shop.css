@@ -127,6 +127,28 @@ body {
     padding: 10px 20px;
     font-size: 50px;
   }
+
+  .product-display{
+    margin:2rem 0;
+    font-size: 20rem;
+  }
+
+  .product-display .product-display-table{
+    width: 80rem;
+    font-size: 5rem;
+    
+    
+
+  }
+
+  .product-display .product-display-table thead{
+
+    padding: 1rem;
+    font-size: 5rem;
+    color: black;
+    background-color: aliceblue;
+
+  }
   .rainbow{
     background-color:blue;
     color: black;
