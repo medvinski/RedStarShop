@@ -80,7 +80,7 @@ function alert($msg) {
 ?>
 <div class="container">
 <div class="admin-product-form-container">
-<form action="<?php $_SERVER["PHP_SELF"]?> "method="post"
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?> "method="post"
 enctype="multipart/form-data">
 <h2>Add new product</h2>
     <input type="text" name="p_name" placeholder="Product name" class="box" required>
