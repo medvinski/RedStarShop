@@ -121,6 +121,7 @@ body {
     position: relative;
     display: inline-flex;
     cursor: help;
+    border-radius: 2rem;
   }
   
   /* The actual popup */
@@ -128,12 +129,14 @@ body {
     visibility: hidden;
     width: 1800px;
     font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
     font-size: 16px;
     background-color:aliceblue;
     color: black;
     text-align:center;
-    border-radius: 2px;
-    padding: 6px 0;
+    border-radius: 20px;
+  
+    padding: 3px 0;
     position: absolute;
     z-index: 1;
     bottom: 50%;

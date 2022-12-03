@@ -22,8 +22,9 @@ body {
     font-size: 80px;
     
     text-align: center;
-    font-family: 'Qebab Shadow FFP', sans-serif;                                           
-    color: rgb(17, 15, 15);
+    font-family: 'Qebab Shadow FFP', sans-serif;
+    background-color:antiquewhite;                                        
+    color: black;
     
   }
   
@@ -31,8 +32,10 @@ body {
     font-size: 40px;
     
     text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;                                           
+    font-family: 'Grover Heavy', sans-serif;                                            
+    background-color: antiquewhite;                                        
     color: black;
+     
     
   }
 
@@ -105,7 +108,7 @@ body {
     
   }
   .rainbow-2:hover{
-    background-image: linear-gradient(to right,red, purple,pink,fuchsia, blue ,red,yellow, blue, white);
+    background-image: linear-gradient(to right,antiquewhite, white,pink,yellow, white);
     animation:slidebg 2s linear infinite;
   }
   .popup {
@@ -126,6 +129,7 @@ body {
   .popup .popuptext {
     visibility: hidden;
     width: 400px;
+    font-weight: bold;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 30px;
     background-color: aliceblue;

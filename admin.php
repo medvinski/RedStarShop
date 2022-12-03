@@ -10,7 +10,8 @@ function function_alert($message) {
 // Function call
 function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit your food purchases!");
 
-include "config.php";
+include("config.php");
+include("header.html");
 
 if(isset($_POST["add_product"]))
 
@@ -73,7 +74,7 @@ if(isset($message)){
 
 }
 
-include("header.php");
+
 
 
 alert("Kim Jong Un asks North Koreans to eat less until 2025 when it reopens its border with China - Please limit your rice purchases (Kim Jong Un's Speech, 2021)");

@@ -60,6 +60,10 @@
     float: none;
   }
 }
+
+
+
+
 .popup {
   position: relative;
   
@@ -90,18 +94,6 @@
   bottom: 125%;
   left: 50%;
   margin-left: -80px;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: rgb(211, 25, 102) transparent transparent transparent;
 }
 
 

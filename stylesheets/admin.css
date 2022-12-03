@@ -105,7 +105,7 @@ body {
     background-color:rgb(109, 106, 106);
     
     padding: 2rem 2rem;
-    margin:10rem;
+    margin:5rem;
     margin-top: 10rem;
     font-family: 'Grover Heavy', sans-serif;  
     
@@ -145,15 +145,17 @@ body {
   .product-display .product-display-table{
     width: 80rem;
     font-size: 3rem;
+    background-color:aliceblue;
     
     
 
   }
+  
 
   .product-display .product-display-table thead{
 
     padding: 1rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: black;
     background-color: rgb(89, 0, 255);
 
@@ -170,53 +172,38 @@ body {
     padding: 10px 20px;
     font-size: 50px;
   }
-  .rainbow{
-    background-color:blue;
-    color: black;
-    border:none;
-    text-align: center;
-    font-family: 'Future Socialism', sans-serif;
-    border-radius:10px;
-    box-shadow: 10px 10px 5px 2px rgb(248, 245, 245);
-    padding: 10px 20px;
-    font-size: 50px;
-    
-  }
-  .rainbow-2:hover{
-    background-image: linear-gradient(to right,red, purple,pink,fuchsia, blue ,red,yellow, blue, white);
-    animation:slidebg 2s linear infinite;
-  }
+  
+  
   .popup {
     position: relative;
-    
     display: inline-flex;
     cursor: help;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -80px;
+    border-radius: 2rem;
   }
   
   /* The actual popup */
   .popup .popuptext {
     visibility: hidden;
-    width: 400px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    background-color: aliceblue;
+    width: 1800px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 16px;
+    background-color:aliceblue;
     color: black;
-    text-align: center;
-    border-radius: 3px;
-    padding: 8px 0;
+    text-align:center;
+    border-radius: 20px;
+  
+    padding: 3px 0;
     position: absolute;
     z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -80px;
+    bottom: 50%;
+    left: 30%;
+    margin-left: -10px;
+    margin-top: 100px;
+    
+    
   }
+  
   
   /* Popup arrow */
   .popup .popuptext::after {

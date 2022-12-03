@@ -11,9 +11,9 @@ function function_alert($message) {
   
   
 // Function call
-function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit your rice purchases!");
+function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit your rice and corn purchases!");
 
-include("header.php");
+include("header.html");
 include ("config.php");
 
 if(isset($_POST['add_to_cart'])){
@@ -53,6 +53,14 @@ if(isset($_POST['add_to_cart'])){
 <body>
     <section class ="products">
     <h1>Welcome to First North Korean Online Shop!</h1>
+    <div class="popup" onclick="myFunction1()"><i class="bi bi-exclamation-square" style="font-size: 5em;"></i> 
+  <span class="popuptext" id="myPopup1">Information on the products available: <br><br> 1. Rice ration - staple food in North Korea, but due to shortages and corruption <br> public distribution
+system is not providing enough food to the citizens.<br><br>2. Pin with faces of previous dictators is mandatory to wear by DPRK people.<br><br>3. South Korean Movies are strictly forbidden
+punishment can involve prison camp sentence. <br><br> 4. Recently it was reported that rice became a luxury reserved for elites, while ordinary workers get corn. <br><br>5. Learning English
+from textbooks like this is reserved for elites. <br><br> 6. There is no free movement in North Korea - even within the country itself -<br> people need special permission to travel
+to the capital (Pyongang).
+</span>
+</div>
 
 <div class ="box-container">
 
@@ -92,7 +100,13 @@ if(mysqli_num_rows($select_products)>0){
 ?>
 </section>
 
-
+<script>
+// When the user clicks on div, open the popup
+function myFunction1() {
+  var popup1 = document.getElementById("myPopup1");
+  popup1.classList.toggle("show");
+}
+</script>
 <script src="js/script.js"></script>
 </body>
 </html>

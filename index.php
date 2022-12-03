@@ -16,7 +16,8 @@
 
 
 <body>
-<h1>This website is  an educational resource about North Korea using e-commerce project template.</h1>
+<h1>This website is an educational resource about North Korea using e-commerce project template.</h1>
+<h1>"Democratic People's Republic of Korea's" - "DPRK" (which isn't a democratic state but a dictatorship) reality is explored via various features of this online shop</h1>
 <div class="popup" onclick="myFunction()"><i class="bi bi-exclamation-square" style="font-size: 5em;"></i> 
   <span class="popuptext" id="myPopup">Clicking on this icon will show additional socio-economic context on the website</span>
 </div>
