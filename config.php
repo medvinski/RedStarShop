@@ -1,7 +1,7 @@
 
 <?php
 
-$conn = mysqli_connect("localhost", "root","","product_db");
+$conn = mysqli_connect("localhost", "root","","shop");
 
 
 ?> 

@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +17,6 @@
 
 <body>
 <h1>This website is  an educational resource about North Korea using e-commerce project template.</h1>
-<h2>Alert messages always showing while accessing are intentional <br>These are meant to mimic constant<br> propaganda and indoctrination in North Korea</h2>
 <div class="popup" onclick="myFunction()"><i class="bi bi-exclamation-square" style="font-size: 5em;"></i> 
   <span class="popuptext" id="myPopup">Clicking on this icon will show additional socio-economic context on the website</span>
 </div>
@@ -24,9 +27,23 @@
 </a>
   </div>
 </div>
-<?php 
+<?php
 
-?>
+
+function function_alert($message) {
+      
+    // Display the alert box 
+    echo "<script>alert('$message');</script>";
+}
+  
+  
+// Function call
+function_alert("Multiple alert messages are intentional. These are meant to mimic constant propaganda in North Korea.");
+
+
+
+        
+?> 
 
 <script>
 // When the user clicks on div, open the popup

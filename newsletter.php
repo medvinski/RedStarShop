@@ -9,9 +9,9 @@ function function_alert($message) {
   
   
 // Function call
-function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit your food purchases!");
+function_alert("Read amazing news how our Great Leader works tirelessly for the betterment of all people in DPKR!");
 
-include("header.html");
+include("header-newsletter.html");
 
         
 ?> 
