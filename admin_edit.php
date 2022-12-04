@@ -2,7 +2,7 @@
 $id = $_GET['edit'];
 include("config.php");
 if(isset($_POST["edit_product"])){
-    $p_name = $_POST["p_name"];
+    $p_name = mysqli_real_escape_string($conn,$_POST["p_name"]);
     $p_price = $_POST["p_price"];
     $p_image = $_FILES["p_image"]["name"];
     $p_image_tmp_name = $_FILES["p_image"]["tmp_name"];

@@ -9,7 +9,7 @@ if($admin_id!=6){
 if(isset($_POST["add_product"]))
 {
 
-$p_name = htmlspecialchars(($_POST["p_name"]));
+$p_name = mysqli_real_escape_string($conn,$_POST["p_name"]);
 $p_price = ($_POST["p_price"]);
 $p_image = ($_FILES["p_image"]["name"]);
 $p_image_tmp_name = $_FILES["p_image"]["tmp_name"];

@@ -17,7 +17,7 @@ if(!isset($user_id)){
 if(isset($_POST['add_to_cart']))
 
 {
-    $p_name=$_POST['p_name'];
+    $p_name=mysqli_real_escape_string($conn,$_POST["p_name"]);
     $p_price=$_POST['p_price'];
     $p_quantity =1;
     //SQL query with variable - prepare statement must be used
