@@ -20,7 +20,7 @@ if(isset($_POST['add_to_cart']))
     $p_name=$_POST['p_name'];
     $p_price=$_POST['p_price'];
     $p_quantity =1;
-
+    //SQL query with variable - prepare statement must be used
     $sql ="SELECT * FROM cart WHERE name = ? && user_id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $p_name, $user_id);
@@ -32,6 +32,7 @@ if(isset($_POST['add_to_cart']))
     echo "<h3>", $message , "</h3>";
     }
     else{
+    //SQL query with variable - prepare statement must be used
     $sql1="INSERT INTO cart(user_id, name, price, quantity) VALUES(?,?,?,?)";
     $stmt = $conn->prepare($sql1);
     $stmt->bind_param("ssss", $user_id, $p_name,$p_price,$p_quantity);
@@ -39,10 +40,8 @@ if(isset($_POST['add_to_cart']))
     $message= "Product added to cart";
     echo "<h3>", $message , "</h3>";
 
-    }
-     
- }
-   
+    }    
+ }  
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,11 +65,11 @@ to the capital (Pyongang).
 </div>
 <div class ="box-container">
 <?php
+//SQL query without variables - conventional query() method can be used
 $select_products = $conn->query("SELECT * FROM products");
     if(mysqli_num_rows($select_products)>0){
         while($row = $select_products->fetch_assoc()){
     ?>
-
 <form action = "" method="post">
 <div class ="box">
     <img src="product_images/<?php echo $row['image'];?>" height="400" width="450">
@@ -79,10 +78,8 @@ $select_products = $conn->query("SELECT * FROM products");
     <input type="hidden"  name="p_name" value="<?php echo $row['name']?>">
     <input type="hidden"  name="p_price" value="<?php echo $row['price']?>">
     <input type="hidden"  name="p_image" value="<?php echo $row['image']?>">
-    <input type="submit" class="btn" value="Add to cart"  name="add_to_cart">
-    
+    <input type="submit" class="btn" value="Add to cart"  name="add_to_cart">    
 </div>
-
 </form>
 <?php
  
@@ -94,7 +91,6 @@ $select_products = $conn->query("SELECT * FROM products");
 </section>
 
 <script>
-// When the user clicks on div, open the popup
 function myFunction1() {
   var popup1 = document.getElementById("myPopup1");
   popup1.classList.toggle("show");
