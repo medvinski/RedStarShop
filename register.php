@@ -11,10 +11,13 @@ if(isset($_POST["submit"])){
   $password =  mysqli_real_escape_string($conn, sha1($_POST["password"]));
   $cpassword =  mysqli_real_escape_string($conn, sha1($_POST["cpassword"]));
 
-  $select = "SELECT * FROM users WHERE email ='$email' && password = '$password'";
-
-
-  $result =mysqli_query($conn, $select);
+  //SQL query with variable - prepare statement must be used
+  $sql ="SELECT * FROM users WHERE email = ? && password=?";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("ss", $email, $password);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  
   if(mysqli_num_rows($result)>0){
     $message = "This user is already registered";
     echo "<h3>", $message , "</h3>";
@@ -24,26 +27,21 @@ if(isset($_POST["submit"])){
       echo "<h3>", $message ,"</h3>";
 
     }else{
-      $insert = "INSERT INTO users(f_name,s_name,songbun,email,password) VALUES ('$f_name',
-      '$s_name', '$songbun','$email','$password')";
-       mysqli_query($conn, $insert);
-       header('location:login.php');
-     }
+    //SQL query with variable - prepare statement must be used
+    $sql1="INSERT INTO users(f_name,s_name,songbun,email,password) VALUES(?,?,?,?,?)";
+    $stmt = $conn->prepare($sql1);
+    $stmt->bind_param("sssss", $f_name, $s_name,$songbun,$email,$password);
+    $stmt->execute();
+    header('location:login.php');
+
     }
-  
-
-};
-
+  }
+}  
 
 function function_alert($message) {
-      
-    // Display the alert box 
-    echo "<script>alert('$message');</script>";
+echo "<script>alert('$message');</script>";
 }
-    
-// Function call
-function_alert("State your songbun! Choose 1 for loyal, 2 for wavering and 3 for hostile class.");
-       
+function_alert("State your songbun! Choose 1 for loyal, 2 for wavering and 3 for hostile class.");      
 ?> 
 
 <!DOCTYPE html>
@@ -59,7 +57,6 @@ function_alert("State your songbun! Choose 1 for loyal, 2 for wavering and 3 for
 <div class="form-container">
 <form action="" method="post">
       <h2>Register new account</h2>
-      
       <input type="text" name="f_name" required placeholder="Enter firstname" class="box" required>
       <input type="text" name="s_name" required placeholder="Enter surname" class="box" required>
       <input type="number" name="songbun" min="1" max="3"  placeholder="Songbun" class="box" required>
@@ -67,7 +64,6 @@ function_alert("State your songbun! Choose 1 for loyal, 2 for wavering and 3 for
       <input type="password" name="password" required placeholder="Enter password" class="box" required>
       <input type="password" name="cpassword" required placeholder="Confirm password" class="box" required>
       <input type="submit" name="submit" class="btn" value="Register"><br><br><br>
-      
       <p>Already registered? <a href="login.php">Login now</a></p>
       <p> <a href="index.php">Go back to disclaimer</a></p>
    </form><br> <br> <br> 
@@ -76,12 +72,8 @@ function_alert("State your songbun! Choose 1 for loyal, 2 for wavering and 3 for
     to justify politically determined discrimination in employment, residence, and schooling  </span>
 </div>
 </div>
-
-
 </body>
-
 <script>
-// When the user clicks on div, open the popup
 function myFunction() {
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
