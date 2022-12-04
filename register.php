@@ -7,7 +7,6 @@ if(isset($_POST["submit"])){
   $f_name = mysqli_real_escape_string($conn,$_POST["f_name"] );
   $s_name = mysqli_real_escape_string($conn,$_POST["s_name"] );
   $songbun = $_POST["songbun"];
-  $u_name = mysqli_real_escape_string($conn,$_POST["u_name"] );
   $email = mysqli_real_escape_string($conn,$_POST["email"] );
   $password = sha1($_POST["password"]);
   $cpassword = sha1($_POST["cpassword"]);
@@ -25,8 +24,8 @@ if(isset($_POST["submit"])){
       echo "<h3>", $message ,"</h3>";
 
     }else{
-      $insert = "INSERT INTO users(f_name,s_name,songbun,u_name,email,password) VALUES ('$f_name',
-      '$s_name', '$songbun', '$u_name','$email','$password')";
+      $insert = "INSERT INTO users(f_name,s_name,songbun,email,password) VALUES ('$f_name',
+      '$s_name', '$songbun','$email','$password')";
        mysqli_query($conn, $insert);
        header('location:login.php');
      }
@@ -64,7 +63,6 @@ function_alert("State your songbun! Choose 1 for loyal, 2 for wavering and 3 for
       <input type="text" name="f_name" required placeholder="Enter firstname" class="box" required>
       <input type="text" name="s_name" required placeholder="Enter surname" class="box" required>
       <input type="number" name="songbun" min="1" max="3"  placeholder="Songbun" class="box" required>
-      <input type="text" name="u_name" required placeholder="Enter username" class="box" required>
       <input type="email" name="email" required placeholder="Enter email" class="box">
       <input type="password" name="password" required placeholder="Enter password" class="box" required>
       <input type="password" name="cpassword" required placeholder="Confirm password" class="box" required>

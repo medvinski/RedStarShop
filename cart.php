@@ -88,15 +88,14 @@ if(isset($_GET['delete_all'])){
    </table>
 
    <div class="confirm-order-btn">
-      <a href="confirm-order.php" class="btn" >Confirm purchase</a>
+      <a href="confirmation.php" class="btn" >Confirm purchase</a>
    </div>
 
 </section>
 
 </div>
    
-<!-- custom js file link  -->
-<script src="js/script.js"></script>
+
 
 </body>
 </html>

@@ -6,34 +6,33 @@ session_start();
 if(isset($_POST["submit"])){
 
 
-  $u_name = mysqli_real_escape_string($conn,$_POST["u_name"] );
   $email = mysqli_real_escape_string($conn,$_POST["email"] );
   $password = sha1($_POST["password"]);
  
 
   $select = "SELECT * FROM users WHERE email ='$email' && password = '$password'";
 
+  $select = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND password = '$password'") or die('query failed');
 
-  $result =mysqli_query($conn, $select);
-  if(mysqli_num_rows($result)>0){
-    $row = mysqli_fetch_array($result);
-    if($row['email'== 'admin@gmail.com']){
-        $_SESSION['admin_name'] = $row['u_name'];
+  if(mysqli_num_rows($select) > 0){
+     $row = mysqli_fetch_assoc($select);
+     if($row['email']=='admin@gmail.com'){
+        $_SESSION['admin_id'] = $row['id'];
         header('location:admin.php');
+     }else{
+        $_SESSION['user_id'] = $row['id'];
+     header('location:shop.php');
 
-    }    
-}elseif($row['email'== 'email']){
-    $_SESSION['user_name'] = $row['u_name'];
-    header('location:shop.php');
-}else{
-    $message = "Incorrect username or password!";
-      echo "<h3>", $message ,"</h3>";
+     }
+    }
+  
+
 }
-}
+
+?>
 
 
-       
-?> 
+
 
 
 
@@ -50,7 +49,6 @@ if(isset($_POST["submit"])){
 <div class="form-container">
 <form action="" method="post">
       <h2>Login</h2>
-      <input type="text" name="u_name" required placeholder="Enter username" class="box" required>
       <input type="email" name="email" required placeholder="Enter email" class="box">
       <input type="password" name="password" required placeholder="Enter password" class="box" required>
       <input type="submit" name="submit" class="btn" value="Login"><br><br><br>

@@ -1,55 +1,74 @@
 <?php
 
-function function_alert($message) {
-      
-    // Display the alert box 
-    echo "<script>alert('$message');</script>";
-}
-  
-  
-// Function call
-function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit your rice and corn purchases!");
-
 include("config.php");
-include("header-admin.html");
+session_start();
+$admin_id = $_SESSION['admin_id'];
 
-if(isset($_POST["add_product"]))
-
-{
-
-    $p_name = htmlspecialchars(($_POST["p_name"]));
-    $p_price = ($_POST["p_price"]);
-    $p_image = ($_FILES["p_image"]["name"]);
-    $p_image_tmp_name = $_FILES["p_image"]["tmp_name"];
-    $p_image_folder = "product_images/".$p_image;
-
-    
-
-    
-    $insert ="INSERT INTO products(name, price, image) VALUES('$p_name','$p_price','$p_image')";
-    $upload = mysqli_query($conn, $insert );
-    
-    if($upload){
-            move_uploaded_file($p_image_tmp_name,$p_image_folder);
-            $message[] = "Product added successfully";
-            
-        
-
-        }else{
-            $message[] ="Product addition failure";
-        }
-    
-}
-  
-
-
-
-if(isset($_GET['delete'])){
-   $id = $_GET['delete'];
-   mysqli_query($conn, "DELETE FROM products WHERE id=$id");
-   header('location:admin.php');
-
+if(!isset($admin_id)){
+   header('location:login.php');
 };
+
+if(isset($_GET['logout'])){
+   unset($user_id);
+   session_destroy();
+   header('location:login.php');
+};
+
+
+    function function_alert($message) {
+      
+        // Display the alert box 
+        echo "<script>alert('$message');</script>";
+    }
+      
+      
+    // Function call
+    function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit your rice and corn purchases!");
+    
+    
+    include("header-admin.html");
+    
+    
+    
+    
+    if(isset($_POST["add_product"]))
+    
+    {
+    
+        $p_name = htmlspecialchars(($_POST["p_name"]));
+        $p_price = ($_POST["p_price"]);
+        $p_image = ($_FILES["p_image"]["name"]);
+        $p_image_tmp_name = $_FILES["p_image"]["tmp_name"];
+        $p_image_folder = "product_images/".$p_image;
+    
+        
+    
+        
+        $insert ="INSERT INTO products(name, price, image) VALUES('$p_name','$p_price','$p_image')";
+        $upload = mysqli_query($conn, $insert );
+        
+        if($upload){
+                move_uploaded_file($p_image_tmp_name,$p_image_folder);
+                $message[] = "Product added successfully";
+                
+            
+    
+            }else{
+                $message[] ="Product addition failure";
+            }
+        
+    }
+      
+    
+    
+    
+    if(isset($_GET['delete'])){
+       $id = $_GET['delete'];
+       mysqli_query($conn, "DELETE FROM products WHERE id=$id");
+       header('location:admin.php');
+    
+    };
+
 
 ?>
 

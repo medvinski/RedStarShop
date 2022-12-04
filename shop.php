@@ -1,5 +1,4 @@
 
-
 <?php
 
 
@@ -15,6 +14,18 @@ function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit you
 
 include ("config.php");
 include("header.html");
+session_start();
+$user_id = $_SESSION['user_id'];
+
+if(!isset($user_id)){
+   header('location:login.php');
+};
+
+if(isset($_GET['logout'])){
+   unset($user_id);
+   session_destroy();
+   header('location:login.php');
+};
 
 
 if(isset($_POST['add_to_cart']))
@@ -74,8 +85,6 @@ to the capital (Pyongang).
 $select_products = mysqli_query($conn, "SELECT * FROM products");
 if(mysqli_num_rows($select_products)>0){
     while($fetch_product = mysqli_fetch_assoc($select_products)){
-
-
 ?>
 
 <form action = "" method="post">
