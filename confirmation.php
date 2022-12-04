@@ -11,7 +11,7 @@
 <body>
 <h1>Order confirmed</h1>
 <h2>If you ordered South Korean Movie - you're now enemy of DPRK  - please report yourself
-    to the nearest police station or await capture.
+    to the nearest police station or become a fugitive.
 </h2>
 <div class="container">
   <div class="center">
