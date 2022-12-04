@@ -1,19 +1,13 @@
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">       
-    <link rel="stylesheet" href="stylesheets/disclaimer.css">
-    
-                            
+    <link rel="stylesheet" href="stylesheets/disclaimer.css">                       
     <title>Disclaimer</title>
 </head>
-
 
 <body>
 <h1>This website is an educational resource about North Korea using e-commerce project template.</h1>
@@ -29,24 +23,13 @@
 </div>
 <?php
 
-
 function function_alert($message) {
-      
-    // Display the alert box 
-    echo "<script>alert('$message');</script>";
+echo "<script>alert('$message');</script>";
 }
-  
-  
-// Function call
-function_alert("Multiple alert messages are intentional. These are meant to mimic constant propaganda in North Korea.");
-
-
-
-        
+function_alert("Multiple alert messages are intentional. These are meant to mimic constant propaganda in North Korea.");       
 ?> 
 
 <script>
-// When the user clicks on div, open the popup
 function myFunction() {
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
