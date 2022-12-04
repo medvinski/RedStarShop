@@ -1,21 +1,12 @@
 <?php
-
-
 function function_alert($message) {
-      
-    // Display the alert box 
-    echo "<script>alert('$message');</script>";
+echo "<script>alert('$message');</script>";
 }
-  
-  
-// Function call
 function_alert("Read amazing news how our Great Leader works tirelessly for the betterment of all people in DPKR!");
 
 include("header-newsletter.html");
-
-        
+       
 ?> 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,9 +18,7 @@ include("header-newsletter.html");
     <title>DPR Newsletter</title>
 </head>
 <body>
-
 <iframe src="files/november-2022-newsletter.pdf" width="100%" height="100%">
-
 
 </body>
 </html>

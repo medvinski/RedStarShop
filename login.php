@@ -2,18 +2,18 @@
 
 include ("config.php");
 session_start();
-
 if(isset($_POST["submit"])){
+$email = mysqli_real_escape_string($conn,$_POST["email"] );
+$password = mysqli_real_escape_string($conn, sha1($_POST["password"]));
 
-
-  $email = mysqli_real_escape_string($conn,$_POST["email"] );
-  $password = mysqli_real_escape_string($conn, sha1($_POST["password"]));
- 
-
-  $select = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' && password = '$password'") or die('query failed');
-
-  if(mysqli_num_rows($select) > 0){
-     $row = mysqli_fetch_assoc($select);
+//SQL query with variable - prepare statement must be used
+$sql ="SELECT * FROM users WHERE email = ? && password=?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ss", $email,$password);
+$stmt->execute();
+$select = $stmt->get_result();
+if(mysqli_num_rows($select) > 0){
+    $row = $select->fetch_assoc();
      if($row['email']=='admin@gmail.com'){
         $_SESSION['admin_id'] = $row['id'];
         header('location:admin.php');
@@ -22,21 +22,15 @@ if(isset($_POST["submit"])){
         header('location:shop.php');
      }
 
-     }
-   else {
+    }
+   else{
         $message= "Incorrect password or login!";
         echo "<h3>", $message , "</h3>";
-     }
-    
+    }    
 }
 
 ?>
-
-
-
-
-
-
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
