@@ -27,7 +27,7 @@ include ("config.php");
    //SQL query with variable - prepare statement must be used
     $sql ="SELECT * FROM users WHERE id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $user_id);
+    $stmt->bind_param("i", $user_id);
     $stmt->execute();
     $select_user = $stmt->get_result();
     if(mysqli_num_rows($select_user) > 0){

@@ -13,7 +13,7 @@ include("header.html");
    <link rel="stylesheet" href="stylesheets/admin.css">
 </head>
 <body>
-   
+
 <h1 class="heading">Shopping cart</h1>
 <div class="product-display">
 <table class ="product-display-table">
@@ -28,7 +28,7 @@ include("header.html");
          //SQL query with variable - prepare statement must be used
          $sql ="SELECT * FROM cart WHERE user_id = ?";
          $stmt = $conn->prepare($sql);
-         $stmt->bind_param("s", $user_id);
+         $stmt->bind_param("i", $user_id);
          $stmt->execute();
          $select = $stmt->get_result();
          if(mysqli_num_rows($select) > 0){

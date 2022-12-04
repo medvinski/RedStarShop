@@ -23,7 +23,7 @@ if(isset($_POST['add_to_cart']))
     //SQL query with variable - prepare statement must be used
     $sql ="SELECT * FROM cart WHERE name = ? && user_id=?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $p_name, $user_id);
+    $stmt->bind_param("si", $p_name, $user_id);
     $stmt->execute();
     $select_cart = $stmt->get_result();
 
@@ -35,7 +35,7 @@ if(isset($_POST['add_to_cart']))
     //SQL query with variable - prepare statement must be used
     $sql1="INSERT INTO cart(user_id, name, price, quantity) VALUES(?,?,?,?)";
     $stmt = $conn->prepare($sql1);
-    $stmt->bind_param("ssss", $user_id, $p_name,$p_price,$p_quantity);
+    $stmt->bind_param("isii", $user_id, $p_name,$p_price,$p_quantity);
     $stmt->execute();
     $message= "Product added to cart";
     echo "<h3>", $message , "</h3>";

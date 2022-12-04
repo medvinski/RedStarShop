@@ -30,7 +30,7 @@ if(isset($_POST["submit"])){
     //SQL query with variable - prepare statement must be used
     $sql1="INSERT INTO users(f_name,s_name,songbun,email,password) VALUES(?,?,?,?,?)";
     $stmt = $conn->prepare($sql1);
-    $stmt->bind_param("sssss", $f_name, $s_name,$songbun,$email,$password);
+    $stmt->bind_param("ssiss", $f_name, $s_name,$songbun,$email,$password);
     $stmt->execute();
     header('location:login.php');
 

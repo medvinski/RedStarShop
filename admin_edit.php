@@ -1,37 +1,25 @@
 <?php
-
 $id = $_GET['edit'];
 include("config.php");
-
 if(isset($_POST["edit_product"])){
-
-
-
     $p_name = $_POST["p_name"];
     $p_price = $_POST["p_price"];
     $p_image = $_FILES["p_image"]["name"];
     $p_image_tmp_name = $_FILES["p_image"]["tmp_name"];
     $p_image_folder = "product_images/".$p_image;
-
-    
-        $edit ="UPDATE products SET name='$p_name', price='$p_price', image='$p_image' WHERE id = '$id'";
-        $upload = mysqli_query($conn, $edit);
-        if($upload){
-            move_uploaded_file($p_image_tmp_name,$p_image_folder);
-            $message[] = "Product edited successfully";
-
-        }else{
-            $message[] ="Product edition failure";
-        }
-    
+    //SQL query with variable - prepare statement must be used
+    $sql = "UPDATE products SET name=?, price=?, image=? WHERE id=?";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("sisi", $p_name, $p_price, $p_image, $id);
+    if($stmt->execute()){
+    move_uploaded_file($p_image_tmp_name,$p_image_folder);
+    $message[] = "Product edited successfully";
+    }else{
+    $message[] ="Product edition failure";
     }
-
-
+    
+}
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,9 +30,7 @@ if(isset($_POST["edit_product"])){
     <title>Admin Edit Panel</title>
 </head>
 <body>
-
 <?php
-
 if(isset($message)){
     foreach($message as $message){
         echo '<span class="message">'.$message.'</span>';
@@ -56,11 +42,13 @@ if(isset($message)){
 <div class="admin-product-form-container">
 
 <?php
-
-$select = mysqli_query($conn, "SELECT * FROM products WHERE id = $id");
-while($row=mysqli_fetch_assoc($select)){
-
-
+//SQL query with variable - prepare statement must be used
+$sql1 ="SELECT * FROM products WHERE id = ?";
+$stmt = $conn->prepare($sql1);
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$select = $stmt->get_result();
+ while($row = $select->fetch_assoc()){
 
 ?>
 
