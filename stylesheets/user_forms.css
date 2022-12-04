@@ -38,10 +38,15 @@ body {
   }
 
   h3 {
-    font-size: 100px;
-    text-align: center;
-    font-family: 'Grover Heavy', sans-serif;                                            
+    font-size: 20px;
+    text-align:center;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
     color: black;
+    margin-right: 60rem;
+    margin-left: 60rem;
+    padding: auto;
+    background-color: antiquewhite;
+    border-radius: 2rem;
 
   }
   h4 {
