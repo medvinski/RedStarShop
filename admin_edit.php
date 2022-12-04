@@ -1,7 +1,7 @@
 <?php
 
 $id = $_GET['edit'];
-@include "config.php";
+include("config.php");
 
 if(isset($_POST["edit_product"])){
 
@@ -13,21 +13,19 @@ if(isset($_POST["edit_product"])){
     $p_image_tmp_name = $_FILES["p_image"]["tmp_name"];
     $p_image_folder = "product_images/".$p_image;
 
-    if(empty($p_name) || empty($p_price) || empty($p_image)){
-        $message[] = "Please add all information to add a product";
-    }else{
+    
         $edit ="UPDATE products SET name='$p_name', price='$p_price', image='$p_image' WHERE id = '$id'";
         $upload = mysqli_query($conn, $edit);
         if($upload){
             move_uploaded_file($p_image_tmp_name,$p_image_folder);
-            $message[] = "Product added successfully";
+            $message[] = "Product edited successfully";
 
         }else{
-            $message[] ="Product addition failure";
+            $message[] ="Product edition failure";
         }
     
     }
-};
+
 
 ?>
 

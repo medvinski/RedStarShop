@@ -20,7 +20,6 @@ body {
  
   h1 {
     font-size: 80px;
-    
     text-align: center;
     font-family: 'Qebab Shadow FFP', sans-serif;                                           
     color: rgb(17, 15, 15);
@@ -29,7 +28,7 @@ body {
   
   h2 {
     font-size: 20px;
-    
+    background-color: antiquewhite;
     text-align: center;
     font-family: 'Grover Heavy', sans-serif;                                            
     color: rgb(6, 7, 7);
@@ -40,17 +39,33 @@ body {
     font-size: 20px;
     text-align:center;
     font-family: Georgia, 'Times New Roman', Times, serif; 
-    background-color: antiquewhite;                                            
     color: black;
+    margin-right: 60rem;
+    margin-left: 60rem;
+    padding: auto;
+    background-color: antiquewhite;
+    border-radius: 2rem;
 
   }
-   .alertMessage {
-      padding: 20px;
-      background-color: #f44336;
-      color: white;
-      font-size: 20px;
-   }
- 
+  .message{
+    
+    background-color: aliceblue;
+    
+    color: black;
+    margin-bottom: 20rem;
+    text-align: center;
+    font-size: 100rem;
+
+  }
+
+  .alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  
 
   .products .box-container{
 
@@ -58,6 +73,7 @@ body {
     grid-template-columns:repeat(auto-fit, 40rem);
     text-align: center;
     padding:2rem;
+    
     
 
   }
@@ -110,13 +126,9 @@ body {
     font-size: 3rem;
     background-color:aliceblue;
     text-align: center;
-    
-    
-
+  
   }
-
- 
-
+  
   .popup {
     position: relative;
     display: inline-flex;
@@ -133,7 +145,7 @@ body {
     font-size: 16px;
     background-color:aliceblue;
     color: black;
-    text-align:center;
+    text-align:auto;
     border-radius: 20px;
   
     padding: 3px 0;
@@ -178,6 +190,18 @@ body {
     from {opacity: 0;}
     to {opacity:1 ;}
   }
+  .form-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:2px;
+    padding-bottom: 70px;
+    background-color: #f44336;
+ }
+  
+ 
+ 
   
   
 

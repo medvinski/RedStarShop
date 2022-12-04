@@ -13,10 +13,13 @@ function function_alert($message) {
 // Function call
 function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit your rice and corn purchases!");
 
-include("header.html");
 include ("config.php");
+include("header.html");
 
-if(isset($_POST['add_to_cart'])){
+
+if(isset($_POST['add_to_cart']))
+
+{
 
     $p_name=$_POST['p_name'];
     $p_price=$_POST['p_price'];
@@ -24,18 +27,20 @@ if(isset($_POST['add_to_cart'])){
     $p_quantity =1;
 
     
-    
-        $insert_product = mysqli_query($conn, "INSERT INTO cart(name,price,image,quantity)
-        VALUES('$p_name','$p_price', '$p_image','$p_quantity')");
-        $message = "Product added to cart";
-        echo "<h3>$message</h3>";
-         
+    $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE name = '$p_name'");
+    if(mysqli_num_rows($select_cart)>0){
+    $message = "Only one product type per order";
+    echo "<h3>", $message , "</h3>";
+    }else{
+    $insert_product = mysqli_query($conn, "INSERT INTO cart(name,price,image,quantity)
+    VALUES('$p_name','$p_price', '$p_image','$p_quantity')");
+    $message= "Product added to cart";
+    echo "<h3>", $message , "</h3>";
+
     }
-
-
-
-
-        
+     
+    }
+     
 ?> 
 
 <!DOCTYPE html>
@@ -45,6 +50,7 @@ if(isset($_POST['add_to_cart'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/shop.css">
+    
     
     
     

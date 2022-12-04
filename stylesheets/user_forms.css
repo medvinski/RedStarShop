@@ -32,7 +32,8 @@ body {
     
     text-align: center;
     font-family: 'Qebab Shadow FFP', sans-serif;                                           
-    color: aliceblue;
+    color:black;
+    
     
   }
 
@@ -99,11 +100,10 @@ body {
     margin-bottom: 15px;
   }
 
-  .admin-product-form-container{
+  .form-container{
 
-    max-width: 500rem;
-    background-color:rgb(109, 106, 106);
-    
+    max-width: 5000rem;
+    background-color:antiquewhite;
     padding: 2rem 2rem;
     margin:5rem;
     margin-top: 10rem;
@@ -111,12 +111,12 @@ body {
     
   }
 
-  .admin-product-form-container .box{
+  .form-container .box{
 
     color:black;
     padding: 1.2rem 2rem;
     font-size: 2rem;
-    width: auto;
+    width: 25rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 
   }
@@ -179,12 +179,13 @@ body {
     display: inline-flex;
     cursor: help;
     border-radius: 2rem;
+    margin-left: 40%;
   }
   
   /* The actual popup */
   .popup .popuptext {
     visibility: hidden;
-    width: 1800px;
+    width: 400px;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     font-size: 16px;

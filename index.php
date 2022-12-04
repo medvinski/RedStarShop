@@ -24,9 +24,8 @@
 <br><br><br><br>
 <div class="container">
   <div class="center">
-  <a class="rainbow rainbow-2" href="shop.php">GO TO SHOP</a>
-</a>
-  </div>
+  <a class="rainbow rainbow-2" href="register.php">Register</a>
+  <a class="rainbow rainbow-2" href="register.php">Login</a>
 </div>
 <?php
 

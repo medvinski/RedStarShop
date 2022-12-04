@@ -60,6 +60,23 @@
     float: none;
   }
 }
+.message{
+  display: block;
+  background-color: aliceblue;
+  padding:1.5 rem 1 rem;
+  color: black;
+  margin-bottom: 20rem;
+  text-align: center;
+  font-size: large;
+
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
 
 
 
