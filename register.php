@@ -8,8 +8,8 @@ if(isset($_POST["submit"])){
   $s_name = mysqli_real_escape_string($conn,$_POST["s_name"] );
   $songbun = $_POST["songbun"];
   $email = mysqli_real_escape_string($conn,$_POST["email"] );
-  $password = sha1($_POST["password"]);
-  $cpassword = sha1($_POST["cpassword"]);
+  $password =  mysqli_real_escape_string($conn, sha1($_POST["password"]));
+  $cpassword =  mysqli_real_escape_string($conn, sha1($_POST["cpassword"]));
 
   $select = "SELECT * FROM users WHERE email ='$email' && password = '$password'";
 

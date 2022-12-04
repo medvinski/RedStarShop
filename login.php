@@ -7,12 +7,10 @@ if(isset($_POST["submit"])){
 
 
   $email = mysqli_real_escape_string($conn,$_POST["email"] );
-  $password = sha1($_POST["password"]);
+  $password = mysqli_real_escape_string($conn, sha1($_POST["password"]));
  
 
-  $select = "SELECT * FROM users WHERE email ='$email' && password = '$password'";
-
-  $select = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND password = '$password'") or die('query failed');
+  $select = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' && password = '$password'") or die('query failed');
 
   if(mysqli_num_rows($select) > 0){
      $row = mysqli_fetch_assoc($select);
@@ -21,12 +19,15 @@ if(isset($_POST["submit"])){
         header('location:admin.php');
      }else{
         $_SESSION['user_id'] = $row['id'];
-     header('location:shop.php');
+        header('location:shop.php');
+     }
 
      }
-    }
-  
-
+   else {
+        $message= "Incorrect password or login!";
+        echo "<h3>", $message , "</h3>";
+     }
+    
 }
 
 ?>

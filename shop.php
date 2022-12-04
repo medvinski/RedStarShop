@@ -21,30 +21,26 @@ if(!isset($user_id)){
    header('location:login.php');
 };
 
-if(isset($_GET['logout'])){
-   unset($user_id);
-   session_destroy();
-   header('location:login.php');
-};
-
 
 if(isset($_POST['add_to_cart']))
 
 {
 
+    
+
     $p_name=$_POST['p_name'];
     $p_price=$_POST['p_price'];
-    $p_image=$_POST['p_image'];
     $p_quantity =1;
 
-    
-    $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE name = '$p_name'");
+    $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE name = '$p_name' && user_id='$user_id'")
+    or die('query failed');
     if(mysqli_num_rows($select_cart)>0){
     $message = "Only one product type per order";
     echo "<h3>", $message , "</h3>";
-    }else{
-    $insert_product = mysqli_query($conn, "INSERT INTO cart(name,price,image,quantity)
-    VALUES('$p_name','$p_price', '$p_image','$p_quantity')");
+    }
+    else{
+    $insert ="INSERT INTO cart(user_id, name, price, quantity) VALUES('$user_id','$p_name','$p_price','$p_quantity')";
+    $add = mysqli_query($conn, $insert );
     $message= "Product added to cart";
     echo "<h3>", $message , "</h3>";
 

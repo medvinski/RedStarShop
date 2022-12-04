@@ -20,3 +20,5 @@
   <div class="center">
   <a class="rainbow rainbow-2" href="shop.php">Back to Shop</a>
 </div>
+</body>
+</html>
