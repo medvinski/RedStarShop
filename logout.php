@@ -1,7 +1,7 @@
 <?php
 include("config.php");
 session_start();
-session_unset();
+unset($user_id);
 session_destroy();
 
 header('location:login.php');
