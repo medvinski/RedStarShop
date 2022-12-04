@@ -60,10 +60,10 @@ body {
   }
   
   p{
-    font-size: medium;
-    position: absolute;
-    bottom: 0;
-    font-family: 'Times New Roman', Times, serif;  
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Grover Heavy', sans-serif;                                            
+    color: black;
   }
    .center {
     
@@ -137,29 +137,7 @@ body {
 
   }
 
-  .product-display{
-    margin:2rem 0;
-    font-size: 5rem;
-  }
-
-  .product-display .product-display-table{
-    width: 80rem;
-    font-size: 3rem;
-    background-color:aliceblue;
-    
-    
-
-  }
-  
-
-  .product-display .product-display-table thead{
-
-    padding: 1rem;
-    font-size: 2rem;
-    color: black;
-    background-color: rgb(89, 0, 255);
-
-  }
+ 
 
   .button {
     background-color:rgb(229, 232, 235);
@@ -179,7 +157,8 @@ body {
     display: inline-flex;
     cursor: help;
     border-radius: 2rem;
-    margin-left: 40%;
+    margin-left: 45%;
+    
   }
   
   /* The actual popup */

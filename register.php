@@ -1,3 +1,17 @@
+<?php
+
+
+function function_alert($message) {
+      
+    // Display the alert box 
+    echo "<script>alert('$message');</script>";
+}
+    
+// Function call
+function_alert("State your songbun! Choose 1 for loyal, 2 for wavering and 3 for hostile class.");
+       
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,12 +32,14 @@
       <input type="email" name="email" required placeholder="Enter email" class="box">
       <input type="password" name="password" required placeholder="Enter password" class="box" required>
       <input type="password" name="cpassword" required placeholder="Confirm password" class="box" required>
-      <input type="submit" name="submit" class="btn" value="Register">
+      <input type="submit" name="submit" class="btn" value="Register"><br><br><br>
+      
       <p>Already registered? <a href="login.php">Login now</a></p>
+      <p> <a href="index.php">Go back to disclaimer</a></p>
    </form><br> <br> <br> 
   <div class="popup" onclick="myFunction()"><i class="bi bi-exclamation-square" style="font-size: 3em;"></i> 
-  <span class="popuptext" id="myPopup">Songbun is the system of ascribed status used in North Korea. Choose 1 for friendly/core, 2 for neutral/
-  wavering and 3 for enemy/hostile  </span>
+  <span class="popuptext" id="myPopup">Songbun is the system of ascribed status used in North Korea, and is used 
+    to justify politically determined discrimination in employment, residence, and schooling  </span>
 </div>
 </div>
 

@@ -11,7 +11,7 @@ function function_alert($message) {
 function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit your rice and corn purchases!");
 
 include("config.php");
-include("header.html");
+include("header-admin.html");
 
 if(isset($_POST["add_product"]))
 
