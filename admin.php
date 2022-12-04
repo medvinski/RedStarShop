@@ -4,25 +4,17 @@ include("config.php");
 session_start();
 $admin_id = $_SESSION['admin_id'];
 
-if(!isset($admin_id)){
-   header('location:login.php');
-};
-
-if(isset($_GET['logout'])){
-   unset($user_id);
-   session_destroy();
+if($admin_id!=6){
    header('location:login.php');
 };
 
 
     function function_alert($message) {
       
-        // Display the alert box 
+        
         echo "<script>alert('$message');</script>";
     }
       
-      
-    // Function call
     function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit your rice and corn purchases!");
     
     

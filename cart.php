@@ -30,9 +30,7 @@ include("header.html");
       <thead>
          <th>Product name</th>
          <th>Product price</th>
-         <!-- <th>Quantity</th>
-         <th>Total price</th> -->
-         <!-- <th>Action</th> -->
+         
       </thead>
 
       <tbody>

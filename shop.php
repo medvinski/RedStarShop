@@ -1,17 +1,10 @@
-
 <?php
 
-
 function function_alert($message) {
-      
-    // Display the alert box 
-    echo "<script>alert('$message');</script>";
+       
+ echo "<script>alert('$message');</script>";
 }
-  
-  
-// Function call
 function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit your rice and corn purchases!");
-
 include ("config.php");
 include("header.html");
 session_start();
@@ -21,13 +14,9 @@ if(!isset($user_id)){
    header('location:login.php');
 };
 
-
 if(isset($_POST['add_to_cart']))
 
 {
-
-    
-
     $p_name=$_POST['p_name'];
     $p_price=$_POST['p_price'];
     $p_quantity =1;
@@ -49,7 +38,6 @@ if(isset($_POST['add_to_cart']))
     }
      
 ?> 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,10 +45,6 @@ if(isset($_POST['add_to_cart']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/shop.css">
-    
-    
-    
-    
     <title>Homepage</title>
 </head>
 <body>
@@ -95,17 +79,11 @@ if(mysqli_num_rows($select_products)>0){
     
 </div>
 
-
 </form>
-
 <?php
  
-
 };
-
-
-
-    
+   
 };
 
 ?>
@@ -118,6 +96,6 @@ function myFunction1() {
   popup1.classList.toggle("show");
 }
 </script>
-<script src="js/script.js"></script>
+
 </body>
 </html>
