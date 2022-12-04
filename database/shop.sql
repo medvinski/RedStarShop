@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 05 Gru 2022, 00:16
+-- Czas generowania: 05 Gru 2022, 00:29
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.0.17
 
@@ -34,14 +34,6 @@ CREATE TABLE `cart` (
   `price` int(255) NOT NULL,
   `quantity` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Zrzut danych tabeli `cart`
---
-
-INSERT INTO `cart` (`id`, `user_id`, `name`, `price`, `quantity`) VALUES
-(114, 5, 'Pin', 1, 1),
-(115, 5, 'Corn ration', 65, 1);
 
 -- --------------------------------------------------------
 
