@@ -9,13 +9,7 @@ if($admin_id!=6){
 };
 
 
-    function function_alert($message) {
-      
-        
-        echo "<script>alert('$message');</script>";
-    }
-      
-    function_alert("Kim Jong Un asks people to eat less till 2025 - Please limit your rice and corn purchases!");
+    
     
     
     include("header-admin.html");
@@ -147,13 +141,6 @@ $select = mysqli_query($conn, "SELECT * FROM products");
 
 
    
-<script src="js/script.js"></script>
-<script>
-    // When the user clicks on div, open the popup
-    function myFunction() {
-      var popup = document.getElementById("myPopup");
-      popup.classList.toggle("show");
-    }
-    </script>
+
 </body>
 </html>
